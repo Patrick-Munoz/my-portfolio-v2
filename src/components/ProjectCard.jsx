@@ -1,4 +1,4 @@
-function ProjectCard({projectImg, imgAlt, projectTitle, projectDescription, children: role}){
+function ProjectCard({projectImg, imgAlt, projectTitle, projectDescription, children: role, href, onClick}){
     return(
         <>
         <li className="rounded-3xl text-neutral bg-primary max-w-72 h-5/6 flex flex-col justify-between m-auto tablet:max-w-96">
@@ -14,7 +14,13 @@ function ProjectCard({projectImg, imgAlt, projectTitle, projectDescription, chil
                 </ul>
             </div>
             <div className="flex justify-end p-3">
-                <button className="bg-accent p-1 w-32 shadow-sm shadow-black rounded-md font-bold">VIEW</button>
+                {href ? (
+                    <a href={href} target="_blank">
+                        <button onClick={onClick} className="bg-accent p-1 w-32 shadow-sm shadow-black rounded-md font-bold">VIEW</button>
+                    </a>
+                ) : (
+                    <button onClick={onClick} className="bg-accent p-1 w-32 shadow-sm shadow-black rounded-md font-bold">VIEW</button>
+                )}
             </div>
         </li>
         </>

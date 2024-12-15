@@ -9,26 +9,41 @@ function Projects(){
             projectImg={"food-bites-desktop.png"} 
             imgAlt={"Foodbites Landing Page"} 
             projectTitle={"FoodBites Landing Page"}
-            projectDescription={"My own project, A landing page for a food delivery business."}
+            projectDescription={"I developed my own project: a fully responsive and visually engaging landing page for a food delivery business. "}
+            href={"https://foodbites-project.netlify.app"}
         >
             <li>Frontend Developer</li>
             <li>Designer</li>
         </ProjectCard>,
         <ProjectCard
-            projectImg={"food-bites-desktop.png"} 
-            imgAlt={"Foodbites Landing Page"} 
-            projectTitle={"FoodBites Landing Page"}
-            projectDescription={"My own project, A landing page for a food delivery business."}
+            projectImg={"exact-system-1.png"} 
+            imgAlt={"Exact Registrar System"} 
+            projectTitle={"Exact Registrar System"}
+            projectDescription={"A comprehensive registrar management system designed to streamline the organization and handling of school records, ensuring efficiency and accuracy."}
         >
+            <li>Project Manager</li>
             <li>Frontend Developer</li>
+            <li>Backend Developer</li>
             <li>Designer</li>
         </ProjectCard>,
         <ProjectCard
-            projectImg={"food-bites-desktop.png"} 
-            imgAlt={"Foodbites Landing Page"} 
-            projectTitle={"FoodBites Landing Page"}
-            projectDescription={"My own project, A landing page for a food delivery business."}
+            projectImg={"landing-page-1.png"} 
+            imgAlt={"Exact Landing Page"} 
+            projectTitle={"Exact Landing Page"}
+            projectDescription={"I designed and developed a professional landing page for the Exact Colleges of Asia, showcasing the school, its programs, and its dedication to academic excellence."}
         >
+            <li>Project Manager</li>
+            <li>Frontend Developer</li>
+            <li>Backend Developer</li>
+            <li>Designer</li>
+        </ProjectCard>,
+        <ProjectCard
+            projectImg={"library-management-1.png"} 
+            imgAlt={"Library Management System"} 
+            projectTitle={"Library Management System"}
+            projectDescription={"A system designed to efficiently organize and manage book collections, streamlining cataloging, tracking, and borrowing processes."}
+        >
+            <li>Project Manager</li>
             <li>Frontend Developer</li>
             <li>Designer</li>
         </ProjectCard>,
@@ -54,9 +69,9 @@ function Projects(){
                 &#8249;
             </button>
             <ul className="grow flex justify-center w-4/5 overflow-hidden">
-                <div className="flex transition-transform duration-500 tablet:w-3/4 laptop:w-2/4" style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
+                <div className="flex transition-transform duration-500 h-screen tablet:w-3/4 laptop:w-2/4" style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
                     {cards.map((card, index) => (
-                    <div key={index} className="flex-shrink-0 w-full">
+                    <div key={index} className="flex-shrink-0 w-full tablet:h-3/4 laptop:h-full">
                         {card}
                     </div>
                     ))}

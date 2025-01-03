@@ -21,6 +21,10 @@ module.exports = {
       'black': '#000000',
       'transparent': 'transparent',
     },
+    backgroundImage: {
+      'laptop-screen': "url('laptop-screen-size.png')",
+      'mobile-screen': "url('mobile-phone-screen.png')",
+    },
     extend: {},
   },
   plugins: [],

@@ -1,7 +1,22 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 function SkillCard() {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isTablet, setIsTablet] = useState(false);
+  const [isLaptop, setIsLaptop] = useState(false);
+
+  useEffect(() => {
+    const checkScreenSize = () => {
+      const width = window.innerWidth;
+      setIsTablet(width >= 768);
+      setIsLaptop(width >= 1024);
+    };
+
+    checkScreenSize();
+    window.addEventListener('resize', checkScreenSize);
+
+    return () => window.removeEventListener('resize', checkScreenSize);
+  }, []);
 
   const cards = [
     <li className="text-neutral bg-primary h-5/6 max-w-72 m-auto tablet:h-4/6 tablet:max-w-96 laptop:h-5/6">
@@ -56,38 +71,55 @@ function SkillCard() {
   ];
 
   const handlePrev = () => {
-    setCurrentIndex((prevIndex) => (prevIndex === 0 ? cards.length - 1 : prevIndex - 1));
+    setCurrentIndex((prevIndex) => {
+      if (prevIndex === 0) {
+        if (isTablet) return cards.length - 1;
+        return cards.length - 1;
+      }
+      return prevIndex - 1;
+    });
   };
 
   const handleNext = () => {
-    setCurrentIndex((prevIndex) => (prevIndex === cards.length - 1 ? 0 : prevIndex + 1));
+    setCurrentIndex((prevIndex) => {
+      if (isTablet && prevIndex === cards.length - 1) return 0;
+      if (prevIndex === cards.length - 1) return 0;
+      return prevIndex + 1;
+    });
   };
 
   return (
     <>
-      <button
-        id="prev"
-        onClick={handlePrev}
-        className="absolute left-2 top-1/2 -translate-y-1/2 bg-primary text-neutral p-2 rounded-full z-10"
+      {!isLaptop && (
+        <button
+          id="prev"
+          onClick={handlePrev}
+          className="absolute left-2 top-1/2 -translate-y-1/2 bg-primary text-neutral p-2 rounded-full z-10"
         >
-        &#8249;
-      </button>
-      <ul className="grow flex justify-center relative overflow-hidden w-4/5 m-auto">
-        <div className="flex transition-transform duration-500 tablet:w-3/4 laptop:w-2/4" style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
+          &#8249;
+        </button>
+      )}
+      <ul className="grow flex justify-center relative overflow-hidden w-4/5 m-auto tablet:justify-normal">
+        <div 
+          className="flex transition-transform duration-500 tablet:w-3/4 laptop:w-full" 
+          style={{ transform: isLaptop ? 'none' : `translateX(-${currentIndex * 100}%)` }}
+        >
           {cards.map((card, index) => (
-            <div key={index} className="flex-shrink-0 w-full">
+            <div key={index} className="flex-shrink-0 w-full laptop:w-1/3">
               {card}
             </div>
           ))}
         </div>
       </ul>
-      <button
-        id="next"
-        onClick={handleNext}
-        className="absolute right-2 top-1/2 -translate-y-1/2 bg-primary text-neutral p-2 rounded-full z-10"
+      {!isLaptop && (
+        <button
+          id="next"
+          onClick={handleNext}
+          className="absolute right-2 top-1/2 -translate-y-1/2 bg-primary text-neutral p-2 rounded-full z-10"
         >
-        &#8250;
-      </button>
+          &#8250;
+        </button>
+      )}
     </>
   );
 }

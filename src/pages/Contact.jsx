@@ -15,7 +15,7 @@ function Contacts(){
                         <a href="mailto:munozpatrickpenullar@gmail.com" target="_blank"><img src="gmail-icon.svg" alt="Gmail" className="max-w-12"/></a>
                     </li>
                     <li>
-                        <a href="https://www.linkedin.com/in/patrick-mu%C3%B1oz-039997274/" target="_blank"><img src="linked-in-icon.svg" alt="Linked In" className="max-w-12"/></a>
+                        <a href="https://www.linkedin.com/in/patrick-jacob-munoz/" target="_blank"><img src="linked-in-icon.svg" alt="Linked In" className="max-w-12"/></a>
                     </li>
                 </ul>
                 <p>&copy;patrickmunoz 2024</p>

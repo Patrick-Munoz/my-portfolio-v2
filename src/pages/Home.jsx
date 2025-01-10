@@ -28,7 +28,7 @@ function Home(){
                     <a href="mailto:munozpatrickpenullar@gmail.com" target="blank"><img src="gmail-icon.svg" alt="Facebook" className="max-w-10 max-h-10 tablet:max-w-20 tablet:max-h-20 desktop:max-w-14 desktop:max-h-14"/></a>
                 </li>
                 <li>
-                    <a href="https://www.linkedin.com/in/patrick-mu%C3%B1oz-039997274/" target="blank"><img src="linked-in-icon.svg" alt="Facebook" className="max-w-10 max-h-10 tablet:max-w-20 tablet:max-h-20 desktop:max-w-14 desktop:max-h-14"/></a>
+                    <a href="https://www.linkedin.com/in/patrick-jacob-munoz/" target="blank"><img src="linked-in-icon.svg" alt="Facebook" className="max-w-10 max-h-10 tablet:max-w-20 tablet:max-h-20 desktop:max-w-14 desktop:max-h-14"/></a>
                 </li>
             </ul>
             <div className="flex flex-col font-bold items-center justify-center gap-2 desktop:flex-row desktop:justify-start desktop:gap-4">
